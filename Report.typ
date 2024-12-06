@@ -50,8 +50,23 @@ to control the current. The two terminals of BJT are called emitter and collecto
 the pole connected to the central region is called the base. A BJT contains 
 two PN junctions. The BJT have four working states---cutoff, active, saturation and breakdown.
 #figure(caption: "Working states of BJT")[#table(align: center, columns: 3)[Working states][PN junction near emitter][PN junction near collector][Cutoff][Reverse biased][Reverse biased][Active][Forward biased][Reverse biased][Saturation][Forward biased][Forward biased][Breakdown][Reversed biased][Breakdown]]  
+This lab session focused on the active and saturation regions.
+In active regions, the BJT satisfies:
+$ I_E=I_B+I_C $
+$ I_C=beta I_B $
+$ V_"CE">V_"ce satuation" $
+Ideally, in this region, $I_C$ only depends on $I_B$ regardless of $V_"CE"$.
+
+When $I_B approx 0$, $I_C approx 0$, BJT is in the cutoff region.
+
+In saturation region, $I_C$ mainly depends on $V_"CE"$ and it can be 
+complex.
+// https://www.gadgetronicx.com/wp-content/uploads/2021/08/transistor-characteristic-curve.png
+
 #figure(caption: "NPN BJT")[#image("npn.png")] <npn>
 #figure(caption: "PNP BJT")[#image("pnp.png")] <pnp>
+#figure(caption: "Working regions of BJT")[#image("transistor-characteristic-curve.png")]
+== 
 = Methods
 
 = Results
