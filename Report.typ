@@ -66,10 +66,26 @@ complex.
 #figure(caption: "NPN BJT")[#image("npn.png")] <npn>
 #figure(caption: "PNP BJT")[#image("pnp.png")] <pnp>
 #figure(caption: "Working regions of BJT")[#image("transistor-characteristic-curve.png")]
-== 
+== Junction Field-effect Transistor(JFET)
+#figure(caption: "JFET")[#image("IN_JFET.png")]<jfet>
+// https://www.electronics-tutorials.ws/transistor/tran_5.html
+A typical JFET has the structure like #ref(<jfet>).
+SimilarlyS depending on materials' permutations, there is N-channel and P-channel
+JFET.
+#figure(caption: "Symbols of two types of JFET")[#image("JFET.png", height: 20%)]
+In a certain working condition(e.g certain temperature), a JFET has a unique $V_P$.
+The working states and its relevant information is listed in #ref(<t2>).
+#figure(caption: "JFET Working regions")[#table(align: center, columns:2)[Linear Region][Condition][Cutoff][$V_"GS"<=V_p$][Linear][$V_"GS">V_P,V_"DS"<V_"GS"-V_P $][Saturation][$V_"GS">V_P,V_"DS">=V_"GS"-V_P $]] <t2>
 = Methods
+For lab session 1, I built a simple circuit that connecting a diode to a variable voltage 
+source and measure the current across the diode.
 
+For lab session 2 and lab session 3, I used LTSpice to perform simulation and 
+used Jupyter notebook to analyze the data. 
 = Results
+== Lab session 1
+=== Forward biased
+=== Reversed biased
 = Discussion
 = Conclusion
 = References
