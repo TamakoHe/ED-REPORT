@@ -1,4 +1,6 @@
 #set text(size: 15pt, font: "Times New Roman")
+#import "@preview/subpar:0.2.0"
+
 = Abstract
 This the report of the 3 lab sessions of the course Electronic Devices. 
 Lab session 1 was about exploring the characteristics of forward basis and 
@@ -85,7 +87,29 @@ used Jupyter notebook to analyze the data.
 = Results
 == Lab session 1
 === Forward biased
+The voltage-current relationship is shown in #ref(<t3>) and #ref(<fp>).
+#figure(caption: "Forward biased")[#table(align: center, columns: 2)[Voltage(V)][Current(A)][0.3][0.012][0.4][0.02][0.5][0.045][0.6][0.105][0.7][0.18][0.9][0.35][1.1][0.529][1.2][0.623][1.3][0.717][1.4][0.812][1.5][0.907][1.6][1.002][1.7][1.098][1.8][1.194][1.9][1.29][2.0][1.387]]<t3>
+#figure(caption: "Forward biased")[#image("forward.png")]<fp>
 === Reversed biased
+The voltage-current relationship is shown in #ref(<t4>) and #ref(<rp>).
+#figure(caption: "Reversed biased")[#table(align: center, columns: 2)[Voltage(mV)][Current(A)][733][0.16][826][0.18][910][0.18][1002][0.183][1134][0.184][1190][0.188][1267][0.191][1375][0.193][1468][0.203][1561][0.208][1654][0.209][1747][0.209][2210.0][0.21][2670.0][0.21][4530.0][0.48][4720.0][0.48]]<t4>
+#figure(caption: "Reversed biased")[#image("rev.png")]<rp>
+== Lab session 2
+I established a Spice model shown in #ref(<lab2p>)
+#figure(caption: "Lab session 2 circuit")[#image("2024-12-06-20-25-01.png")]<lab2p>
+For task 1, I observed the relations between $I_C$ and $V_"BE"$ when $V_"CC"$=15, 8, 6, 5, 4, 3, 2, 1 V. Four figures was selected and displayed in #ref(<lat1>)
+
+#subpar.grid(figure(image("Lab2/21.png", width: 100%)), figure(image("Lab2/22.png", width: 100%)), figure(image("Lab2/23.png", width: 100%)),figure(image("Lab2/24.png", width: 100%)),columns: (1fr,1fr), caption: "Lab sessuib 2 task1",label: <lat1>)
+For task 2, I set $V_"CC"$ to be 5V. Then, $V_"BE"$ was adjuted to 
+approximately 1.241 V ensuring that $V_"CE"$ was close to 5V.
+Then, $V_"CC"$ was modified while $V_"BE"$ was fixed to make $V_"CE"$ to be 0,0.2,1,3,5,10 V. $I_C$ is measured meanwhile.
+The results are shown in #ref(<l2t2t>) and #ref(<l2t2p>).
+#figure(caption: "Lab session 2 taks2")[#table(align: center, columns: 2)[$V_"CE"("V")$][$I_C ("mA")$][0][0][0.2][0.171][1][0.935][3][2.88][5][4.64][10][4.99]]<l2t2t>
+#figure(caption: "Lab session 2 task2")[#image("2024-12-06-21-02-38.png")]<l2t2p>
+== Lab session 3
+I established a Spice model shown in #ref(<fig-lab3>).
+#figure(caption: "Lab session 3 circuit")[#image("2024-12-06-21-09-37.png")] <fig-lab3>
+
 = Discussion
 = Conclusion
 = References
