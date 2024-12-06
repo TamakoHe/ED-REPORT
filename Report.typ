@@ -10,20 +10,18 @@ All of these three components are essential to modern electronic engineering. Th
 == Semiconductor 
 A substance that can conduct electricity is named a conductor, in the opposite, a substance that can not conduct electricity is named insulator. Semiconductors, 
 however, have conducting properties which are between 
-conductor and insulator. Due to their unique characteristics, semiconductors-related technologies are widely applied in electronic industries such as ICs(integrated circuits) production.
-// https://www.hitachi-hightech.com/global/en/knowledge/semiconductor/room/about/
+conductor and insulator. Due to their unique characteristics, semiconductors-related technologies are widely applied in electronic industries such as ICs(integrated circuits) production.[1]
 == Doping 
 The majority of semiconductors are silicon. Unfortunately, the pure silicon's conductivity is too small($sigma approx 1.56 times 10^(-3) S\/m $). Therefore, doping is required for industrial practices. There are two types of doping. N-type means adding 
 elements whose valence electrons are more than that of silicon such as phosphorus. P-type indicates adding elements whose valence electrons are 
 less than that of silicon, for example, boron. A very small amount of doping can significantly increase the conductivity of semiconductors. 
-// https://en.wikipedia.org/wiki/Doping_(semiconductor)#/media/File:Silicon_doping_-_Type_P_and_N.svg
 #figure(caption: "Doping")[#image("doping.png")]
 == PN junction and diodes
 // https://toshiba-semicon-storage.com/cn/semiconductor/knowledge/e-learning/discrete/chap1/chap1-6.html
 A diode is constructed with a P-type semiconductor and a N-type Semiconductor
 connected in series. 
-#figure(caption: "PN junction")[#image("pnj.jpg", height: 40%)]
-The region where two types of materials contact forms the PN junction.
+#figure(caption: "PN junction")[#image("pnj.jpg", height: 40%) ]
+The region where two types of materials contact forms the PN junction[2].
 The holes which carry positive charges in P-type semiconductors can move freely,
 while the electrons which carry negative charges in N-type semiconductors can move 
 freely. They both initially flow to another type because of concentration difference.
@@ -32,7 +30,7 @@ in region near the contact forming the depletion layer. As these carriers
 continued to move, the holes that have entered N-type semiconductor and the electrons 
 that have entered T-type semiconductor will form a electronic field from 
 N region to P region. This electronic will prevent more carriers from diffusion.
-A stable depletion layer will establish with this negative feedback mechanism.
+A stable depletion layer will establish with this negative feedback mechanism[3].
 // https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor-diodes/forwardbiasedpnjunctionsemiconductordiode.html
 When a positive voltage is applied between the P region and N region like #ref(<fb>),
 the external voltage can promote the carriers' diffusion, thinning the depletion layer.
@@ -70,10 +68,9 @@ complex.
 #figure(caption: "Working regions of BJT")[#image("transistor-characteristic-curve.png")]
 == Junction Field-effect Transistor(JFET)
 #figure(caption: "JFET")[#image("IN_JFET.png")]<jfet>
-// https://www.electronics-tutorials.ws/transistor/tran_5.html
 A typical JFET has the structure like #ref(<jfet>).
 SimilarlyS depending on materials' permutations, there is N-channel and P-channel
-JFET.
+JFET[4].
 #figure(caption: "Symbols of two types of JFET")[#image("JFET.png", height: 20%)]
 In a certain working condition(e.g certain temperature), a JFET has a unique $V_P$.
 The working states and its relevant information is listed in #ref(<t2>).
@@ -97,7 +94,7 @@ The voltage-current relationship is shown in #ref(<t4>) and #ref(<rp>).
 == Lab session 2
 I established a Spice model shown in #ref(<lab2p>)
 #figure(caption: "Lab session 2 circuit")[#image("2024-12-06-20-25-01.png")]<lab2p>
-For task 1, I observed the relations between $I_C$ and $V_"BE"$ when $V_"CC"$=15, 8, 6, 5, 4, 3, 2, 1 V. Four figures was selected and displayed in #ref(<lat1>)
+For task 1, I observed the relations between $I_C$ and $V_"BE"$ when $V_"CC"$ is equal to a series of values. Four figures was selected and displayed in #ref(<lat1>)
 
 #subpar.grid(figure(image("Lab2/21.png", width: 100%)), figure(image("Lab2/22.png", width: 100%)), figure(image("Lab2/23.png", width: 100%)),figure(image("Lab2/24.png", width: 100%)),columns: (1fr,1fr), caption: "Lab sessuib 2 task1",label: <lat1>)
 For task 2, I set $V_"CC"$ to be 5V. Then, $V_"BE"$ was adjuted to 
@@ -109,8 +106,38 @@ The results are shown in #ref(<l2t2t>) and #ref(<l2t2p>).
 == Lab session 3
 I established a Spice model shown in #ref(<fig-lab3>).
 #figure(caption: "Lab session 3 circuit")[#image("2024-12-06-21-09-37.png")] <fig-lab3>
+The two figures of task 1 are shown in #ref(<l3t1>).
+#subpar.grid(figure(image("l3_1.png"), caption: $I_D-V_"GS"$), figure(image("l3_2.png"), caption: $I_D-V_"DS"$),  caption: "Lab session 3 task1", label: <l3t1>)
+For task 2, I was required to choose a proper operation point Q.
+When a small signal is applied, $V_"GS">0$ should be avoided,
+thus, the medium of previous values $V_"GS"=-1.1"V"$ or $V_"GS"=-1.6"V"$ should be selected.
+#figure(caption: "Lab session 3 task 2")[#image("l3p2.png")]
+For task 3, as the supply voltage is 20V, I should connect the the selected 
+operation point Q and (20,0). The absolute value of slope is the value of 
+$R_D$.  
+$ R_D approx 1577 Omega $
+The voltage of the battery3 required to bias the gate is $V_"GS"$ in case $approx 1.6 "V"$.
 
+For task 4. $R_D$ is integrated and the circuit is displayed in #ref(<fig-18>). A sine wave is applied.
+#figure(caption: "Lab session 3 taske4 circuit")[#image("2024-12-06-21-56-55.png")]<fig-18>
+The respone to a sine wave of 1kHZ $V_"pp"=0.25V $ is shown in #ref(<final>).
+#figure(caption: "Response")[#image("2024-12-06-22-04-16.png")]<final>
 = Discussion
+Lab session 1, the diode lab is relatively easy 
+to obtain ideal result. However, for small current, especially when 
+it is setup with the reversed biased. It is hard to get an accurate 
+current measurement as the instrument's limit.
+
+Regarding lab session 2 and 3, being familiar with simulation software 
+and plotting platform like plotly in this report is essential.
 = Conclusion
+Diode, BJT, and JFET are classic semiconductor devices based on the PN-junction, and they have become foundational building blocks in electronics. These devices can function as both switches and amplifiers, offering a variety of applications in circuits.
 = References
-= Appendix
+#set text(size: 8pt)
+[1] Hitachi High-Tech, "What are semiconductors?," Online. Available: https://www.hitachi-hightech.com/global/en/knowledge/semiconductor/room/about/. [Accessed: Dec. 6, 2024].
+
+[2] Toshiba, "What is a pn Junction?," Online. Available: https://toshiba.semicon-storage.com/us/semiconductor/knowledge/e-learning/discrete/chap1/chap1-6.html. [Accessed: Dec. 6, 2024].
+
+[3] physics-and-radio-electronics.com, "Forward biased p-n junction diode," Online. Available: https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor-diodes/forwardbiasedpnjunctionsemiconductordiode.html. [Accessed: Dec. 6, 2024].
+
+[4] Electronics tutorials, "Junction Field Effect Transistor," Online. Available: https://www.electronics-tutorials.ws/transistor/tran_5.html. [Accessed: Dec. 6, 2024].

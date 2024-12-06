@@ -1,0 +1,11 @@
+* E:\2024-2025\ED\Lab2\Draft1.asc
+V1 N003 0 SINE(-1 0.25 1k)
+V2 N002 0 20V
+J1 N001 N003 0 2N3819
+R1 N002 N001 1577
+.model NJF NJF
+.model PJF PJF
+.lib C:\Users\googl\AppData\Local\LTspice\lib\cmp\standard.jft
+.tran 0.02
+.backanno
+.end
