@@ -1,14 +1,17 @@
 #set text(size: 15pt, font: "Times New Roman")
 #import "@preview/subpar:0.2.0"
-
+#align(center)[#text(size: 50pt)[Electronic Devices]#v(50pt) #text(size: 35pt)[Lab Report]]
+#v(80pt)
+#align(center)[===  GUID:2839915 UESTC ID:2022190504031 Name: He WenXiao]
+#pagebreak()
 = Abstract
-This the report of the 3 lab sessions of the course Electronic Devices. 
+This is the report of the 3 lab sessions of the course Electronic Devices. 
 Lab session 1 was about exploring the characteristics of forward basis and 
 reverse basis of diodes. Lab session 2 required conducting a basic research on Bipolar Junction Transistor(BJT). Lab session 3, however, was a coursework regarding the Junction Field-effect Transistor(JFET).
 All of these three components are essential to modern electronic engineering. These three lab sessions provided valuable hands-on experience and a deeper understanding of fundamental semiconductor devices.
 = Introduction
 == Semiconductor 
-A substance that can conduct electricity is named a conductor, in the opposite, a substance that can not conduct electricity is named insulator. Semiconductors, 
+A substance that can conduct electricity is named a conductor, on the contrary, a substance that can not conduct electricity is named insulator. Semiconductors, 
 however, have conducting properties which are between 
 conductor and insulator. Due to their unique characteristics, semiconductors-related technologies are widely applied in electronic industries such as ICs(integrated circuits) production.[1]
 == Doping 
@@ -28,7 +31,7 @@ freely. They both initially flow to another type because of concentration differ
 As the holes and electrons carry different types of charges, they will neutralize 
 in region near the contact forming the depletion layer. As these carriers 
 continued to move, the holes that have entered N-type semiconductor and the electrons 
-that have entered T-type semiconductor will form a electronic field from 
+that have entered T-type semiconductor will form an electric field from 
 N region to P region. This electronic will prevent more carriers from diffusion.
 A stable depletion layer will establish with this negative feedback mechanism[3].
 // https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor-diodes/forwardbiasedpnjunctionsemiconductordiode.html
@@ -84,20 +87,41 @@ used Jupyter notebook to analyze the data.
 = Results
 == Lab session 1
 === Forward biased
+- Simulation
+#figure(caption: "Forward biased")[#image("2024-12-08-18-55-13.png")]
+The threshold voltage is $V_F approx 676 "mV"$
+- Real circuit
 The voltage-current relationship is shown in #ref(<t3>) and #ref(<fp>).
 #figure(caption: "Forward biased")[#table(align: center, columns: 2)[Voltage(V)][Current(A)][0.3][0.012][0.4][0.02][0.5][0.045][0.6][0.105][0.7][0.18][0.9][0.35][1.1][0.529][1.2][0.623][1.3][0.717][1.4][0.812][1.5][0.907][1.6][1.002][1.7][1.098][1.8][1.194][1.9][1.29][2.0][1.387]]<t3>
 #figure(caption: "Forward biased")[#image("forward.png")]<fp>
+The threshold voltage is $V_F approx 0.6 V$.
+It is clearly shown that when the forward biased volatge exceeds a certain 
+threshold value, the current will increase rapidly.
 === Reversed biased
+- Simulation
+#figure(caption: "Reversed biased")[#image("2024-12-08-19-02-57.png")]
+The breakdown voltage is $V_R approx 210 "mV"$
+- Real circuit
 The voltage-current relationship is shown in #ref(<t4>) and #ref(<rp>).
 #figure(caption: "Reversed biased")[#table(align: center, columns: 2)[Voltage(mV)][Current(A)][733][0.16][826][0.18][910][0.18][1002][0.183][1134][0.184][1190][0.188][1267][0.191][1375][0.193][1468][0.203][1561][0.208][1654][0.209][1747][0.209][2210.0][0.21][2670.0][0.21][4530.0][0.48][4720.0][0.48]]<t4>
 #figure(caption: "Reversed biased")[#image("rev.png")]<rp>
+The breakdown voltage is $V_R approx 2670 "mV"$
+In the reversed biased case, when the voltage exceeds the breakdown 
+voltage, the current will increase rapidly.
+=== Problem 4
+$ V_"bi"=(k T)/a ln((N_A N_D)/n_i^2) approx 0.582 V $
+$ W=sqrt((2 epsilon_r epsilon_0)/q ((N_A+N_D)/(N_A N_D)) V_"bi") approx 1.2 times 10^(-7) m $
+=== Problem 5
+$ V_"bi"=(k T)/a ln((N_A N_D)/n_i^2) approx 0.902 V $
+$ W=sqrt((2 epsilon_r epsilon_0)/q ((N_A+N_D)/(N_A N_D)) V_"bi") approx 1/04 times 10^(-8) m $
+$ E(0)=(q N_A W)/(epsilon_r epsilon_0) approx 1.57 times 10^(6) V\/ "cm" $
 == Lab session 2
 I established a Spice model shown in #ref(<lab2p>)
 #figure(caption: "Lab session 2 circuit")[#image("2024-12-06-20-25-01.png")]<lab2p>
 For task 1, I observed the relations between $I_C$ and $V_"BE"$ when $V_"CC"$ is equal to a series of values. Four figures was selected and displayed in #ref(<lat1>)
 
-#subpar.grid(figure(image("Lab2/21.png", width: 100%)), figure(image("Lab2/22.png", width: 100%)), figure(image("Lab2/23.png", width: 100%)),figure(image("Lab2/24.png", width: 100%)),columns: (1fr,1fr), caption: "Lab sessuib 2 task1",label: <lat1>)
-For task 2, I set $V_"CC"$ to be 5V. Then, $V_"BE"$ was adjuted to 
+#subpar.grid(figure(image("Lab2/21.png", width: 100%)), figure(image("Lab2/22.png", width: 100%)), figure(image("Lab2/23.png", width: 100%)),figure(image("Lab2/24.png", width: 100%)),columns: (1fr,1fr), caption: "Lab session 2 task1",label: <lat1>)
+For task 2, I set $V_"CC"$ to be 5V. Then, $V_"BE"$ was adjusted to 
 approximately 1.241 V ensuring that $V_"CE"$ was close to 5V.
 Then, $V_"CC"$ was modified while $V_"BE"$ was fixed to make $V_"CE"$ to be 0,0.2,1,3,5,10 V. $I_C$ is measured meanwhile.
 The results are shown in #ref(<l2t2t>) and #ref(<l2t2p>).
@@ -120,7 +144,7 @@ The voltage of the battery3 required to bias the gate is $V_"GS"$ in case $appro
 
 For task 4. $R_D$ is integrated and the circuit is displayed in #ref(<fig-18>). A sine wave is applied.
 #figure(caption: "Lab session 3 taske4 circuit")[#image("2024-12-06-21-56-55.png")]<fig-18>
-The respone to a sine wave of 1kHZ $V_"pp"=0.25V $ is shown in #ref(<final>).
+The response to a sine wave of 1kHZ $V_"pp"=0.25V $ is shown in #ref(<final>).
 #figure(caption: "Response")[#image("2024-12-06-22-04-16.png")]<final>
 = Discussion
 Lab session 1, the diode lab is relatively easy 
